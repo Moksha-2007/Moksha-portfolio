@@ -1,0 +1,764 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official portfolio of K H Mokshagna, B.Tech Artificial Intelligence and Data Science student, aspiring entrepreneur and event host.">
+  <meta name="theme-color" content="#6c3ce9">
+  <title>K H Mokshagna | Personal Portfolio</title>
+
+  <style>
+    :root {
+      --primary: #6c3ce9;
+      --primary-dark: #4e25b5;
+      --light-purple: #f2edff;
+      --background: #fbfaff;
+      --white: #ffffff;
+      --text: #24213a;
+      --muted: #66647a;
+      --border: #e8e2f6;
+      --shadow: 0 8px 28px rgba(65, 35, 120, 0.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 95px 0 85px;
+      background: linear-gradient(135deg, #f3edff, #ffffff 65%, #eee5ff);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.3rem);
+      line-height: 1.13;
+      margin-bottom: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-bottom: 25px;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      width: 125px;
+      height: 125px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--light-purple);
+      border: 3px solid #d9caff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 2.3rem;
+      font-weight: 800;
+    }
+
+    .hero-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+    }
+
+    .hero-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      border: 2px solid var(--primary);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    .button-outline:hover {
+      color: var(--white);
+    }
+
+    section {
+      padding: 75px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+      overflow-wrap: anywhere;
+    }
+
+    .card-icon {
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--light-purple);
+      color: var(--primary-dark);
+      border: 1px solid #e2d7ff;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .soft-section {
+      background: #f4f0ff;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      background: var(--white);
+      border-left: 5px solid var(--primary);
+      padding: 23px 25px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .date {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 12px 0 24px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      background: #21173b;
+      color: #eee7ff;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 0.9rem;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+      color: #c9bce8;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-card {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px 17px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: 92%;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.82rem;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 23px 18px;
+      }
+
+      .timeline-item {
+        padding: 20px;
+      }
+
+      .button {
+        padding: 11px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="logo" href="#home">Mokshagna.</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+
+        <div>
+          <span class="eyebrow">Welcome to my portfolio</span>
+
+          <h1>
+            Hi, I'm <span class="highlight">K H Mokshagna</span>
+          </h1>
+
+          <p>
+            A B.Tech student in Artificial Intelligence and Data Science,
+            an aspiring entrepreneur, a creative learner and a passionate
+            event host. I believe in learning continuously, building
+            meaningful skills and turning ideas into reality.
+          </p>
+
+          <div class="buttons">
+            <a class="button" href="#contact">Contact Me</a>
+            <a class="button button-outline"
+               href="https://github.com/Moksha-2007"
+               target="_blank"
+               rel="noopener noreferrer">Visit GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="avatar" aria-label="Mokshagna initials">KM</div>
+          <h2>K H Mokshagna</h2>
+          <p>AI &amp; Data Science Student</p>
+          <p>Future Entrepreneur | Event Host</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About Me</h2>
+          <p>A little about my journey and ambitions</p>
+        </div>
+
+        <div class="about-box">
+          <p>
+            I am currently pursuing my second year of B.Tech in Artificial
+            Intelligence and Data Science at PACE Institute of Technology
+            and Sciences.
+          </p>
+
+          <p>
+            I am interested in artificial intelligence, technology,
+            entrepreneurship, communication and creative problem-solving.
+            I enjoy exploring new ideas, improving my abilities and
+            participating in opportunities that help me grow.
+          </p>
+
+          <p>
+            My long-term ambition is to become a successful entrepreneur
+            and build meaningful solutions that create a positive impact
+            on society.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Education</h2>
+          <p>My academic journey</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="date">Currently pursuing</div>
+            <h3>B.Tech — Artificial Intelligence and Data Science</h3>
+            <p>PACE Institute of Technology and Sciences</p>
+            <p>Second Year</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">2023 – 2025</div>
+            <h3>Intermediate</h3>
+            <p>Narayana Junior College, Kandukur</p>
+            <p>Marks: 838 / 1000</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">2022 – 2023</div>
+            <h3>Secondary School</h3>
+            <p>Siddhardha English Medium High School, Kandukur</p>
+            <p>Marks: 530 / 600</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Skills &amp; Interests</h2>
+          <p>Areas I am exploring and developing</p>
+        </div>
+
+        <div class="grid">
+
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Programming</h3>
+            <p>Building my programming foundations and developing logical thinking.</p>
+            <div class="tag-list">
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">Java</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI &amp; Technology</h3>
+            <p>Exploring emerging technologies and their practical applications.</p>
+            <div class="tag-list">
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Generative AI</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎤</div>
+            <h3>Communication</h3>
+            <p>Interested in public speaking, stage hosting and creative expression.</p>
+            <div class="tag-list">
+              <span class="tag">Anchoring</span>
+              <span class="tag">Public Speaking</span>
+              <span class="tag">Leadership</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Entrepreneurship</h3>
+            <p>Interested in innovative ideas, business building and solving real-world problems.</p>
+            <div class="tag-list">
+              <span class="tag">Innovation</span>
+              <span class="tag">Business Ideas</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📊</div>
+            <h3>Data &amp; Analytics</h3>
+            <p>Learning about data analysis, visualization and modern data platforms.</p>
+            <div class="tag-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">Microsoft Fabric</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Continuous Learning</h3>
+            <p>Building knowledge step by step and looking for opportunities to improve.</p>
+            <div class="tag-list">
+              <span class="tag">Curiosity</span>
+              <span class="tag">Growth Mindset</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="learning">
+      <div class="container">
+        <div class="section-heading">
+          <h2>My Learning Journey</h2>
+          <p>Topics I am interested in learning and exploring</p>
+        </div>
+
+        <div class="grid">
+
+          <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Exploring AI concepts, generative AI and machine learning fundamentals.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☁️</div>
+            <h3>Microsoft Technologies</h3>
+            <p>Exploring Azure AI, Microsoft Copilot, Microsoft Fabric and Power BI.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛠️</div>
+            <h3>Project Development</h3>
+            <p>Working toward turning technical knowledge and creative ideas into useful projects.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Achievements &amp; Experiences</h2>
+          <p>Milestones that inspire me to keep growing</p>
+        </div>
+
+        <div class="grid">
+
+          <article class="card">
+            <div class="card-icon">👑</div>
+            <h3>Ms. Novus Winner</h3>
+            <p>Winner of the Ms. Novus title through the Lingua Franca Club.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏆</div>
+            <h3>JAM Session — First Prize</h3>
+            <p>Secured first prize in a Just A Minute session organized by the Lingua Franca Club.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎙️</div>
+            <h3>Event Hosting</h3>
+            <p>Experience hosting college events and engaging audiences on stage.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="goals">
+      <div class="container">
+        <div class="section-heading">
+          <h2>My Vision</h2>
+          <p>Learning today. Building for tomorrow.</p>
+        </div>
+
+        <div class="about-box">
+          <p>
+            My vision is to combine technology, creativity and
+            entrepreneurship to build solutions that are useful,
+            accessible and impactful.
+          </p>
+
+          <p>
+            I want to keep learning, gain practical experience,
+            collaborate with inspiring people and eventually build
+            a business that creates lasting value for society.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Let's Connect</h2>
+          <p>Open to learning, collaboration and meaningful opportunities</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>Have an idea or opportunity?</h3>
+
+          <p>
+            Feel free to reach out to me through email, WhatsApp or GitHub.
+            I would love to connect and learn from new experiences.
+          </p>
+
+          <div class="contact-links">
+
+            <a class="button"
+               href="mailto:khmokshagna0212@gmail.com?subject=Portfolio%20Enquiry">
+              Email Me
+            </a>
+
+            <a class="button"
+               href="https://wa.me/916309715697?text=Hello%20Mokshagna"
+               target="_blank"
+               rel="noopener noreferrer">
+              WhatsApp
+            </a>
+
+            <a class="button button-outline"
+               href="https://github.com/Moksha-2007"
+               target="_blank"
+               rel="noopener noreferrer">
+              GitHub
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 K H Mokshagna. All rights reserved.</p>
+    <p>Designed with purpose, passion and a vision for the future.</p>
+  </footer>
+
+</body>
+</html>
+```
