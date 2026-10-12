@@ -487,6 +487,7 @@
         <a href="#skills">Skills</a>
         <a href="#learning">Learning</a>
         <a href="#achievements">Achievements</a>
+        <a href="#goals">Vision</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -497,7 +498,6 @@
       <div class="container hero-content">
         <div>
           <span class="eyebrow">Welcome to my portfolio</span>
-
           <h1>Hi, I'm <span class="highlight">K H Mokshagna</span></h1>
 
           <p>
@@ -750,16 +750,13 @@
 
         <div class="contact-box">
           <h3 style="text-align:center;">Have an idea or opportunity?</h3>
+
           <p class="contact-intro">
             Send me a message using the form below. You don't need to know
             my personal email address or phone number to contact me.
           </p>
 
-          <!--
-            SETUP REQUIRED:
-            Replace YOUR_FORM_ID with your actual Formspree form ID.
-            Until you connect Formspree, this form will not send messages.
-          -->
+          <!-- Formspree contact form -->
           <form
             id="contactForm"
             class="contact-form"
@@ -786,9 +783,7 @@
                 placeholder="Enter your email address"
                 autocomplete="email"
                 required>
-              <span class="form-note">
-                Used to reply to your enquiry.
-              </span>
+              <span class="form-note">Used to reply to your enquiry.</span>
             </div>
 
             <div class="form-group">
@@ -823,7 +818,9 @@
               Send Message
             </button>
 
-            <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
+            <p class="form-note">
+              Fields marked * are required.
+            </p>
           </form>
 
           <p class="privacy-note">
@@ -831,7 +828,7 @@
             Please avoid sharing sensitive personal information in messages.
           </p>
 
-          <div class="contact-links" style="margin-top:22px;">
+          <div style="margin-top:22px;">
             <a
               class="button button-outline"
               href="https://github.com/Moksha-2007"
@@ -852,8 +849,6 @@
     const queryType = document.getElementById("queryType");
     const otherQueryGroup = document.getElementById("otherQueryGroup");
     const otherQuery = document.getElementById("otherQuery");
-    const contactForm = document.getElementById("contactForm");
-    const formStatus = document.getElementById("formStatus");
 
     function updateOtherQuery() {
       const showOther = queryType.value === "Others";
@@ -870,18 +865,11 @@
     queryType.addEventListener("change", updateOtherQuery);
     updateOtherQuery();
 
-    contactForm.addEventListener("submit", function(event) {
-      const formAction = contactForm.getAttribute("action");
-
-      if (formAction.includes("mbgdaqea")) {
-        event.preventDefault();
-        formStatus.textContent =
-          "The contact form is not connected yet. Please set up Formspree and add your form ID.";
-        return;
-      }
-
-      formStatus.textContent = "Sending your message...";
-    });
+    /*
+      The form submits directly to Formspree.
+      Do not add event.preventDefault() here, because that would stop
+      the browser from submitting the contact form.
+    */
   </script>
 </body>
 </html>
